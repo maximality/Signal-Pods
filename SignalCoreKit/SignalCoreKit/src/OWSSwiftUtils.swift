@@ -44,7 +44,7 @@ public func owsFailDebug(_ logMessage: String,
     if IsDebuggerAttached() {
         TrapDebugger()
     } else {
-        assertionFailure(formattedMessage)
+//        assertionFailure(formattedMessage)
     }
 }
 

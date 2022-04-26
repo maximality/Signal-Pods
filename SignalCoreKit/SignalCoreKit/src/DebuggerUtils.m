@@ -36,12 +36,12 @@ void TrapDebugger(void)
 {
     // __builtin_debugtrap doesn't respect lldb's breakpoints enabled setting.
     // To temporarily disable this "breakpoint" set enabled to NO.
-    static BOOL enabled = YES;
-    if (!enabled) {
-        return;
-    }
-
-    __builtin_debugtrap();
+//    static BOOL enabled = YES;
+//    if (!enabled) {
+//        return;
+//    }
+//
+//    __builtin_debugtrap();
 }
 
 #endif // DEBUG

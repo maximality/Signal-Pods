@@ -31,7 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
         if (!(X)) {                                                                                                    \
             OWSLogError(@"Assertion failed: %s", CONVERT_EXPR_TO_STRING(X));                                           \
             OWSLogFlush();                                                                                             \
-            NSAssert(0, @"Assertion failed: %s", CONVERT_EXPR_TO_STRING(X));                                           \
         }                                                                                                              \
     } while (NO)
 
@@ -40,7 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
         if (!(X)) {                                                                                                    \
             OWSLogError(@"Assertion failed: %s", CONVERT_EXPR_TO_STRING(X));                                           \
             OWSLogFlush();                                                                                             \
-            NSCAssert(0, @"Assertion failed: %s", CONVERT_EXPR_TO_STRING(X));                                          \
         }                                                                                                              \
     } while (NO)
 
@@ -50,28 +48,24 @@ NS_ASSUME_NONNULL_BEGIN
         if (IsDebuggerAttached()) {                                                                                    \
             TrapDebugger();                                                                                            \
         } else {                                                                                                       \
-            NSAssert(0, formattedMessage);                                                                             \
         }                                                                                                              \
     } while (NO)
 
 #define OWSCFailWithoutLogging(message, ...)                                                                           \
     do {                                                                                                               \
         NSString *formattedMessage = [NSString stringWithFormat:message, ##__VA_ARGS__];                               \
-        NSCAssert(0, formattedMessage);                                                                                \
     } while (NO)
 
 #define OWSFailNoFormat(message)                                                                                       \
     do {                                                                                                               \
         OWSLogError(@"%@", message);                                                                                   \
         OWSLogFlush();                                                                                                 \
-        NSAssert(0, message);                                                                                          \
     } while (NO)
 
 #define OWSCFailNoFormat(message)                                                                                      \
     do {                                                                                                               \
         OWSLogError(@"%@", message);                                                                                   \
         OWSLogFlush();                                                                                                 \
-        NSCAssert(0, message);                                                                                         \
     } while (NO)
 
 #else
