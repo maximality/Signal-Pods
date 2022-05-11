@@ -1,4 +1,5 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - blurhash (0.0.1)
   - BonMot (6.0.0)
   - CocoaLumberjack (3.7.0):
@@ -14,6 +15,7 @@ PODS:
     - SignalCoreKit
   - GRDB.swift/SQLCipher (4.3.0):
     - SQLCipher (>= 3.4.0)
+  - IQKeyboardManager (6.5.9)
   - LibMobileCoin/CoreHTTP (1.2.0-pre10):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
@@ -110,6 +112,7 @@ PODS:
     - SignalCoreKit
     - SwiftProtobuf
     - YYImage/WebP
+  - SnapKit (5.6.0)
   - SQLCipher (4.3.0):
     - SQLCipher/standard (= 4.3.0)
   - SQLCipher/common (4.3.0)
@@ -128,11 +131,13 @@ PODS:
     - YYImage/Core
 
 DEPENDENCIES:
+  - ActiveLabel
   - blurhash (from `https://github.com/signalapp/blurhash`, branch `signal-master`)
   - BonMot
   - "Curve25519Kit (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - "Curve25519Kit/Tests (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - GRDB.swift/SQLCipher
+  - IQKeyboardManager
   - LibMobileCoin/CoreHTTP (from `https://github.com/signalapp/libmobilecoin-ios-artifacts.git`, branch `signal/1.2.0-pre10`)
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
   - lottie-ios
@@ -152,6 +157,7 @@ DEPENDENCIES:
   - SignalRingRTC (from `ThirdParty/SignalRingRTC.podspec`)
   - SignalServiceKit (from `.`)
   - SignalServiceKit/Tests (from `.`)
+  - SnapKit (~> 5.6.0)
   - SQLCipher (>= 4.0.1)
   - SSZipArchive
   - Starscream (from `https://github.com/signalapp/Starscream.git`, branch `signal-release`)
@@ -161,15 +167,18 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - BonMot
     - CocoaLumberjack
     - GRDB.swift
+    - IQKeyboardManager
     - libwebp
     - Logging
     - lottie-ios
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SnapKit
     - SQLCipher
     - SSZipArchive
     - SwiftProtobuf
@@ -258,11 +267,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/signalapp/YYImage
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   blurhash: 4b3b2b8909cf41ab59fa349788654b8387284ff4
   BonMot: fb2b6a2209cb3149aca37b7131d49c051c04ae86
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Curve25519Kit: 4b6cddbe2d44be0ccb37e15ba719a145edab8aff
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   LibMobileCoin: 40d2d7d685321a6128871b6c6b4bb7cba25e848f
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
@@ -280,12 +291,13 @@ SPEC CHECKSUMS:
   SignalCoreKit: 87da14c58d57760793b892ff03838c5ef2ce1167
   SignalRingRTC: 8f1b90a580505a8305e10c7b53727d0acfc3bc4b
   SignalServiceKit: 25ca5d50484d3883990bd18a4825ec3d57bbe798
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: cf87b845b6920f34c6820abd507e5213bebaae0a
+PODFILE CHECKSUM: 33eaba5f645a41fb6ca9dab5660d126168bb428a
 
 COCOAPODS: 1.10.1
