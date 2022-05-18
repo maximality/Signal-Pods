@@ -17,6 +17,7 @@ PODS:
   - GRDB.swift/SQLCipher (4.3.0):
     - SQLCipher (>= 3.4.0)
   - IQKeyboardManager (6.5.9)
+  - Kingfisher (7.2.1)
   - LibMobileCoin/CoreHTTP (1.2.0-pre10):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
@@ -121,6 +122,8 @@ PODS:
     - SQLCipher/common
   - SSZipArchive (2.1.4)
   - Starscream (3.1.1)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
   - SwiftProtobuf (1.15.0)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -140,6 +143,7 @@ DEPENDENCIES:
   - FittedSheets
   - GRDB.swift/SQLCipher
   - IQKeyboardManager
+  - Kingfisher (~> 7.0)
   - LibMobileCoin/CoreHTTP (from `https://github.com/signalapp/libmobilecoin-ios-artifacts.git`, branch `signal/1.2.0-pre10`)
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
   - lottie-ios
@@ -163,6 +167,7 @@ DEPENDENCIES:
   - SQLCipher (>= 4.0.1)
   - SSZipArchive
   - Starscream (from `https://github.com/signalapp/Starscream.git`, branch `signal-release`)
+  - SVGKit
   - SwiftProtobuf (>= 1.14.0)
   - YYImage (from `https://github.com/signalapp/YYImage`)
   - YYImage/libwebp (from `https://github.com/signalapp/YYImage`)
@@ -175,6 +180,7 @@ SPEC REPOS:
     - FittedSheets
     - GRDB.swift
     - IQKeyboardManager
+    - Kingfisher
     - libwebp
     - Logging
     - lottie-ios
@@ -184,6 +190,7 @@ SPEC REPOS:
     - SnapKit
     - SQLCipher
     - SSZipArchive
+    - SVGKit
     - SwiftProtobuf
 
 EXTERNAL SOURCES:
@@ -278,6 +285,7 @@ SPEC CHECKSUMS:
   FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
   LibMobileCoin: 40d2d7d685321a6128871b6c6b4bb7cba25e848f
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
@@ -299,9 +307,10 @@ SPEC CHECKSUMS:
   SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: b75efcaeafc96d28d3a9432495c327b56aa2c7b6
+PODFILE CHECKSUM: ce3fce167cdef63e2b8bd652015c1bc2e24baa27
 
 COCOAPODS: 1.10.1
