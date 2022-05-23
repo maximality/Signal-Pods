@@ -5,6 +5,7 @@ PODS:
   - CocoaLumberjack (3.7.0):
     - CocoaLumberjack/Core (= 3.7.0)
   - CocoaLumberjack/Core (3.7.0)
+  - CryptoSwift (1.4.3)
   - Curve25519Kit (2.1.0):
     - CocoaLumberjack
     - SignalClient
@@ -138,6 +139,7 @@ DEPENDENCIES:
   - ActiveLabel
   - blurhash (from `https://github.com/signalapp/blurhash`, branch `signal-master`)
   - BonMot
+  - CryptoSwift (~> 1.4.1)
   - "Curve25519Kit (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - "Curve25519Kit/Tests (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - FittedSheets
@@ -177,6 +179,7 @@ SPEC REPOS:
     - ActiveLabel
     - BonMot
     - CocoaLumberjack
+    - CryptoSwift
     - FittedSheets
     - GRDB.swift
     - IQKeyboardManager
@@ -281,6 +284,7 @@ SPEC CHECKSUMS:
   blurhash: 4b3b2b8909cf41ab59fa349788654b8387284ff4
   BonMot: fb2b6a2209cb3149aca37b7131d49c051c04ae86
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
   Curve25519Kit: 4b6cddbe2d44be0ccb37e15ba719a145edab8aff
   FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
@@ -311,6 +315,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: ce3fce167cdef63e2b8bd652015c1bc2e24baa27
+PODFILE CHECKSUM: 733a411382c9d7fa3091d738c39ef17db59fdef2
 
 COCOAPODS: 1.10.1
