@@ -15,6 +15,10 @@ PODS:
     - SignalClient
     - SignalCoreKit
   - FittedSheets (2.4.2)
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+    - nekoton_flutter
   - GRDB.swift/SQLCipher (4.3.0):
     - SQLCipher (>= 3.4.0)
   - IQKeyboardManager (6.5.9)
@@ -62,6 +66,8 @@ PODS:
     - CocoaLumberjack
     - Logging (~> 1.4)
     - SwiftProtobuf
+  - nekoton_flutter (0.0.1):
+    - Flutter
   - OpenSSL-Universal (1.1.1100)
   - PureLayout (3.1.4)
   - Reachability (3.2)
@@ -143,6 +149,8 @@ DEPENDENCIES:
   - "Curve25519Kit (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - "Curve25519Kit/Tests (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - FittedSheets
+  - Flutter (from `nekoton/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `nekoton/.ios/Flutter/FlutterPluginRegistrant`)
   - GRDB.swift/SQLCipher
   - IQKeyboardManager
   - Kingfisher (~> 7.0)
@@ -153,6 +161,7 @@ DEPENDENCIES:
   - MobileCoin/CoreHTTP (from `https://github.com/mobilecoinofficial/MobileCoin-Swift.git`, tag `v1.2.0-pre10`)
   - MobileCoinMinimal (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - MobileCoinMinimal/Tests (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
+  - nekoton_flutter (from `nekoton/.ios/.symlinks/plugins/nekoton_flutter/ios`)
   - OpenSSL-Universal (from `https://github.com/signalapp/GRKOpenSSLFramework`)
   - PureLayout
   - Reachability
@@ -203,6 +212,10 @@ EXTERNAL SOURCES:
   Curve25519Kit:
     :branch: feature/SignalClient-adoption
     :git: "ssh://git@github.com/signalapp/Curve25519Kit"
+  Flutter:
+    :path: nekoton/.ios/Flutter
+  FlutterPluginRegistrant:
+    :path: nekoton/.ios/Flutter/FlutterPluginRegistrant
   LibMobileCoin:
     :branch: signal/1.2.0-pre10
     :git: https://github.com/signalapp/libmobilecoin-ios-artifacts.git
@@ -218,6 +231,8 @@ EXTERNAL SOURCES:
   MobileCoinMinimal:
     :branch: charlesmchen/mobileCoinMinimal
     :git: https://github.com/signalapp/MobileCoin-Swift.git
+  nekoton_flutter:
+    :path: nekoton/.ios/.symlinks/plugins/nekoton_flutter/ios
   OpenSSL-Universal:
     :git: https://github.com/signalapp/GRKOpenSSLFramework
   SignalArgon2:
@@ -287,6 +302,8 @@ SPEC CHECKSUMS:
   CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
   Curve25519Kit: 4b6cddbe2d44be0ccb37e15ba719a145edab8aff
   FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  FlutterPluginRegistrant: e2442d995906c27bdda5fc4a548c82c17cbb8f18
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
@@ -298,6 +315,7 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MobileCoin: fa887ccc409a21d66b123702d4eb5b720610417b
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
+  nekoton_flutter: bc42a14b5877a883b8d357df8cfef011b0fdd399
   OpenSSL-Universal: d8fb58afffcf2dafe4ad99e17efe236bcd216c2e
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -315,6 +333,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: 733a411382c9d7fa3091d738c39ef17db59fdef2
+PODFILE CHECKSUM: 0657f84341c63a8e8bb151e5a4c62dd5b89ba1be
 
 COCOAPODS: 1.10.1

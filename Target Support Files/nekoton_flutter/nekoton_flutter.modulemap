@@ -1,0 +1,6 @@
+framework module nekoton_flutter {
+  umbrella header "nekoton_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}
