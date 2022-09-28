@@ -1,0 +1,6 @@
+framework module nekoton_uniffi {
+  umbrella header "nekoton_uniffi-umbrella.h"
+
+  export *
+  module * { export * }
+}

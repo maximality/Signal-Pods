@@ -1,0 +1,30 @@
+{
+  "name": "nekoton_uniffi",
+  "version": "0.0.1",
+  "summary": "uniffi bindings for Nekoton.",
+  "description": "uniffi bindings for Nekoton.",
+  "homepage": "http://example.com",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Andrei Klaptsov": "skyggedans@protonmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "public_header_files": "Classes**/*.h",
+  "source_files": "Classes/**/*",
+  "static_framework": true,
+  "vendored_libraries": "**/*.a",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386",
+    "STRIP_STYLE": "non-global"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}
