@@ -51,6 +51,7 @@ PODS:
     - CocoaLumberjack
     - Logging (~> 1.4)
     - SwiftProtobuf
+  - nativebridge-ios (0.1.1)
   - nekoton_uniffi (0.0.1)
   - OpenSSL-Universal (1.1.1900)
   - PureLayout (3.1.4)
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - MobileCoin/CoreHTTP (from `https://github.com/mobilecoinofficial/MobileCoin-Swift.git`, tag `v1.2.2`)
   - MobileCoinMinimal (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - MobileCoinMinimal/Tests (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
+  - nativebridge-ios
   - nekoton_uniffi (from `nekoton_uniffi/ios/nekoton_uniffi.podspec`)
   - OpenSSL-Universal (from `https://github.com/signalapp/GRKOpenSSLFramework`)
   - PureLayout
@@ -143,6 +145,7 @@ SPEC REPOS:
     - libwebp
     - Logging
     - lottie-ios
+    - nativebridge-ios
     - PureLayout
     - Reachability
     - SAMKeychain
@@ -257,6 +260,7 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MobileCoin: effd134ddf721aab2e84d6ed0148486eab2cb9c8
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
+  nativebridge-ios: 52d7fb6216038c9d953b3acbab2c815659fc07a7
   nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
   OpenSSL-Universal: 84efb8a29841f2764ac5403e0c4119a28b713346
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
@@ -274,6 +278,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: ce3022741f30586e2765d92206e40fe5fed65165
+PODFILE CHECKSUM: 61e874766ea0292d18197c58fb66e2bd13da5c14
 
 COCOAPODS: 1.11.3
