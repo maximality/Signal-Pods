@@ -1,19 +1,4 @@
 #!/bin/sh
-                
-# ---- this is added by cocoapods-binary ---
-# Readlink cannot handle relative symlink well, so we override it to a new one
-# If the path isn't an absolute path, we add a realtive prefix.
-old_read_link=`which readlink`
-readlink () {
-    path=`$old_read_link "$1"`;
-    if [ $(echo "$path" | cut -c 1-1) = '/' ]; then
-        echo $path;
-    else
-        echo "`dirname $1`/$path";
-    fi
-}
-# --- 
-#!/bin/sh
 set -e
 set -u
 set -o pipefail
@@ -70,8 +55,8 @@ install_framework()
   fi
 
   # Use filter instead of exclude so missing patterns don't throw errors.
-  echo "rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${destination}\""
-  rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${destination}"
+  echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${destination}\""
+  rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${destination}"
 
   local basename
   basename="$(basename -s .framework "$1")"
@@ -110,8 +95,8 @@ install_dsym() {
   warn_missing_arch=${2:-true}
   if [ -r "$source" ]; then
     # Copy the dSYM into the targets temp dir.
-    echo "rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${DERIVED_FILES_DIR}\""
-    rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${DERIVED_FILES_DIR}"
+    echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${DERIVED_FILES_DIR}\""
+    rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${DERIVED_FILES_DIR}"
 
     local basename
     basename="$(basename -s .dSYM "$source")"
@@ -124,10 +109,11 @@ install_dsym() {
     fi
     if [[ $STRIP_BINARY_RETVAL == 0 ]]; then
       # Move the stripped file into its final destination.
-      echo "rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${DERIVED_FILES_DIR}/${basename}.framework.dSYM\" \"${DWARF_DSYM_FOLDER_PATH}\""
-      rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${DERIVED_FILES_DIR}/${basename}.dSYM" "${DWARF_DSYM_FOLDER_PATH}"
+      echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${DERIVED_FILES_DIR}/${basename}.framework.dSYM\" \"${DWARF_DSYM_FOLDER_PATH}\""
+      rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${DERIVED_FILES_DIR}/${basename}.dSYM" "${DWARF_DSYM_FOLDER_PATH}"
     else
       # The dSYM was not stripped at all, in this case touch a fake folder so the input/output paths from Xcode do not reexecute this script because the file is missing.
+      mkdir -p "${DWARF_DSYM_FOLDER_PATH}"
       touch "${DWARF_DSYM_FOLDER_PATH}/${basename}.dSYM"
     fi
   fi
@@ -175,8 +161,8 @@ strip_invalid_archs() {
 install_bcsymbolmap() {
     local bcsymbolmap_path="$1"
     local destination="${BUILT_PRODUCTS_DIR}"
-    echo "rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${bcsymbolmap_path}" "${destination}""
-    rsync --copy-links --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${bcsymbolmap_path}" "${destination}"
+    echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${bcsymbolmap_path}" "${destination}""
+    rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${bcsymbolmap_path}" "${destination}"
 }
 
 # Signs a framework with the provided identity
@@ -198,195 +184,144 @@ if [[ "$CONFIGURATION" == "App Store Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Curve25519Kit/Curve25519Kit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LibSignalClient/LibSignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalArgon2/SignalArgon2.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalClient/SignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalCoreKit/SignalCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalRingRTC/SignalRingRTC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/blurhash/blurhash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LibMobileCoin/LibMobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoin/MobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nativebridge-ios/NativeBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Curve25519Kit/Curve25519Kit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LibSignalClient/LibSignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalArgon2/SignalArgon2.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalClient/SignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalCoreKit/SignalCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalRingRTC/SignalRingRTC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/blurhash/blurhash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LibMobileCoin/LibMobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoin/MobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nativebridge-ios/NativeBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework"
 fi
 if [[ "$CONFIGURATION" == "Profiling" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Curve25519Kit/Curve25519Kit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LibSignalClient/LibSignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalArgon2/SignalArgon2.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalClient/SignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalCoreKit/SignalCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalRingRTC/SignalRingRTC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/blurhash/blurhash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LibMobileCoin/LibMobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoin/MobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nativebridge-ios/NativeBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Curve25519Kit/Curve25519Kit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LibSignalClient/LibSignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalArgon2/SignalArgon2.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalClient/SignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalCoreKit/SignalCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalRingRTC/SignalRingRTC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/blurhash/blurhash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LibMobileCoin/LibMobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoin/MobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nativebridge-ios/NativeBridge.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework"
 fi
 if [[ "$CONFIGURATION" == "Testable Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Curve25519Kit/Curve25519Kit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LibSignalClient/LibSignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalArgon2/SignalArgon2.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalClient/SignalClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalCoreKit/SignalCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SignalRingRTC/SignalRingRTC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/blurhash/blurhash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LibMobileCoin/LibMobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoin/MobileCoin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nativebridge-ios/NativeBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

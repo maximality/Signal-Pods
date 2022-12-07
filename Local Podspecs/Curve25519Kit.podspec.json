@@ -28,7 +28,7 @@
   "frameworks": "Security",
   "requires_arc": true,
   "platforms": {
-    "ios": "10.0"
+    "ios": "12.2"
   },
   "dependencies": {
     "CocoaLumberjack": [
@@ -37,8 +37,8 @@
     "SignalCoreKit": [
 
     ],
-    "SignalClient": [
-
+    "LibSignalClient": [
+      ">= 0.15.0"
     ]
   },
   "testspecs": [

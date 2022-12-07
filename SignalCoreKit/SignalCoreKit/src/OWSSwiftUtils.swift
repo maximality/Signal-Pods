@@ -8,11 +8,7 @@ import Foundation
  * We synchronize access to state in this class using this queue.
  */
 public func assertOnQueue(_ queue: DispatchQueue) {
-    if #available(iOS 10.0, *) {
-        dispatchPrecondition(condition: .onQueue(queue))
-    } else {
-        // Skipping check on <iOS10, since syntax is different and it's just a development convenience.
-    }
+    dispatchPrecondition(condition: .onQueue(queue))
 }
 
 @inlinable
@@ -83,13 +79,6 @@ public func owsAssert(_ condition: Bool,
         owsFail(message.isEmpty ? "Assertion failed." : message,
                 file: file, function: function, line: line)
     }
-}
-
-@inlinable
-public func notImplemented(file: String = #file,
-                           function: String = #function,
-                           line: Int = #line) -> Never {
-    owsFail("Method not implemented.", file: file, function: function, line: line)
 }
 
 @objc
