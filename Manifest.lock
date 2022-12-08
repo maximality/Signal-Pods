@@ -1,9 +1,11 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - blurhash (0.0.1)
   - BonMot (6.0.0)
   - CocoaLumberjack (3.7.4):
     - CocoaLumberjack/Core (= 3.7.4)
   - CocoaLumberjack/Core (3.7.4)
+  - CryptoSwift (1.4.3)
   - Curve25519Kit (2.1.0):
     - CocoaLumberjack
     - LibSignalClient (>= 0.15.0)
@@ -12,8 +14,11 @@ PODS:
     - CocoaLumberjack
     - LibSignalClient (>= 0.15.0)
     - SignalCoreKit
+  - FittedSheets (2.5.3)
   - GRDB.swift/SQLCipher (5.26.0):
     - SQLCipher (>= 3.4.0)
+  - IQKeyboardManager (6.5.10)
+  - Kingfisher (7.4.1)
   - LibMobileCoin/CoreHTTP (1.2.2):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
@@ -46,6 +51,8 @@ PODS:
     - CocoaLumberjack
     - Logging (~> 1.4)
     - SwiftProtobuf
+  - nativebridge-ios (0.1.1)
+  - nekoton_uniffi (0.0.1)
   - OpenSSL-Universal (1.1.1900)
   - PureLayout (3.1.4)
   - Reachability (3.2)
@@ -63,6 +70,7 @@ PODS:
     - SignalRingRTC/WebRTC (= 2.21.5)
   - SignalRingRTC/WebRTC (2.21.5):
     - SignalCoreKit
+  - SnapKit (5.6.0)
   - SQLCipher (4.5.1):
     - SQLCipher/standard (= 4.5.1)
   - SQLCipher/common (4.5.1)
@@ -70,7 +78,10 @@ PODS:
     - SQLCipher/common
   - SSZipArchive (2.5.2)
   - Starscream (3.1.1)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
   - SwiftProtobuf (1.20.2)
+  - SwiftyJSON (4.3.0)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -79,12 +90,17 @@ PODS:
     - YYImage/Core
 
 DEPENDENCIES:
+  - ActiveLabel
   - blurhash (from `https://github.com/signalapp/blurhash`, branch `signal-master`)
   - BonMot
   - CocoaLumberjack
+  - CryptoSwift (~> 1.4.1)
   - "Curve25519Kit (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
   - "Curve25519Kit/Tests (from `ssh://git@github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)"
+  - FittedSheets
   - GRDB.swift/SQLCipher
+  - IQKeyboardManager
+  - Kingfisher (~> 7.0)
   - LibMobileCoin/CoreHTTP (from `https://github.com/signalapp/libmobilecoin-ios-artifacts.git`, branch `signal/1.2.2`)
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
   - LibSignalClient (from `https://github.com/signalapp/libsignal-client.git`)
@@ -95,6 +111,8 @@ DEPENDENCIES:
   - MobileCoin/CoreHTTP (from `https://github.com/mobilecoinofficial/MobileCoin-Swift.git`, tag `v1.2.2`)
   - MobileCoinMinimal (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - MobileCoinMinimal/Tests (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
+  - nativebridge-ios
+  - nekoton_uniffi (from `nekoton_uniffi/ios/nekoton_uniffi.podspec`)
   - OpenSSL-Universal (from `https://github.com/signalapp/GRKOpenSSLFramework`)
   - PureLayout
   - Reachability
@@ -104,26 +122,38 @@ DEPENDENCIES:
   - "SignalCoreKit (from `git@github.com:signalapp/SignalCoreKit`)"
   - "SignalCoreKit/Tests (from `git@github.com:signalapp/SignalCoreKit`)"
   - SignalRingRTC (from `ThirdParty/SignalRingRTC.podspec`)
+  - SnapKit (~> 5.6.0)
   - SQLCipher (>= 4.0.1)
   - SSZipArchive (from `ThirdParty/SSZipArchive.podspec`)
   - Starscream (from `https://github.com/signalapp/Starscream.git`, branch `signal-release`)
+  - SVGKit
   - SwiftProtobuf (>= 1.14.0)
+  - SwiftyJSON (~> 4.0)
   - YYImage (from `https://github.com/signalapp/YYImage`)
   - YYImage/libwebp (from `https://github.com/signalapp/YYImage`)
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - BonMot
     - CocoaLumberjack
+    - CryptoSwift
+    - FittedSheets
     - GRDB.swift
+    - IQKeyboardManager
+    - Kingfisher
     - libwebp
     - Logging
     - lottie-ios
+    - nativebridge-ios
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SnapKit
     - SQLCipher
+    - SVGKit
     - SwiftProtobuf
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   blurhash:
@@ -149,6 +179,8 @@ EXTERNAL SOURCES:
   MobileCoinMinimal:
     :branch: charlesmchen/mobileCoinMinimal
     :git: https://github.com/signalapp/MobileCoin-Swift.git
+  nekoton_uniffi:
+    :path: nekoton_uniffi/ios/nekoton_uniffi.podspec
   OpenSSL-Universal:
     :git: https://github.com/signalapp/GRKOpenSSLFramework
   SignalArgon2:
@@ -209,11 +241,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/signalapp/YYImage
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   blurhash: 4b3b2b8909cf41ab59fa349788654b8387284ff4
   BonMot: fb2b6a2209cb3149aca37b7131d49c051c04ae86
   CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
   Curve25519Kit: 003b546a89ceb374a64c7771b40f8362d63b91bd
+  FittedSheets: c22df4c06036515f247951fa174912e8a65c8ce4
   GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
+  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   LibMobileCoin: 860cbd565a4839cb8be784465100d9f09ac419aa
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
   LibSignalClient: d5fc5e3c791013339932a8574c8b5e81e04a5455
@@ -223,6 +260,8 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MobileCoin: effd134ddf721aab2e84d6ed0148486eab2cb9c8
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
+  nativebridge-ios: 52d7fb6216038c9d953b3acbab2c815659fc07a7
+  nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
   OpenSSL-Universal: 84efb8a29841f2764ac5403e0c4119a28b713346
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -230,12 +269,15 @@ SPEC CHECKSUMS:
   SignalArgon2: 1c24183835ca861e6af06631c18b1671cdf35571
   SignalCoreKit: 9febad2d82f80c5b2f446740c68f1fba6d4cd9b2
   SignalRingRTC: 868ab2bb72d4d4be55466452c2a5c2545cafe25c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLCipher: 712e8416685e8e575b9b0706ffee71678b2fdcf8
   SSZipArchive: 8c3485528a87fa6f90afdbfc33682eb61d985ae5
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: 9f458aaa7844a2fc0b910053e66578bc4e2da9c1
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: 147f1a21f458a057c3da5177649e40e8e6a34181
+PODFILE CHECKSUM: 8c2b2e4a91d20676b6b91041e399ff12d3a28bb3
 
 COCOAPODS: 1.11.3

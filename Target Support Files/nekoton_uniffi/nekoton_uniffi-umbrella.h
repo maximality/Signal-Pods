@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "nekotonFFI.h"
 #import "transportFFI.h"
 
 FOUNDATION_EXPORT double nekoton_uniffiVersionNumber;
