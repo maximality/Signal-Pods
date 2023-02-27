@@ -52,6 +52,9 @@ PODS:
     - Logging (~> 1.4)
     - SwiftProtobuf
   - nekoton_uniffi (0.0.1)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - OpenSSL-Universal (1.1.1900)
   - PureLayout (3.1.4)
   - Reachability (3.2)
@@ -69,6 +72,7 @@ PODS:
     - SignalRingRTC/WebRTC (= 2.21.5)
   - SignalRingRTC/WebRTC (2.21.5):
     - SignalCoreKit
+  - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
   - SQLCipher (4.5.1):
     - SQLCipher/standard (= 4.5.1)
@@ -111,6 +115,7 @@ DEPENDENCIES:
   - MobileCoinMinimal (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - MobileCoinMinimal/Tests (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - nekoton_uniffi (from `nekoton_uniffi/ios/nekoton_uniffi.podspec`)
+  - NVActivityIndicatorView
   - OpenSSL-Universal (from `https://github.com/signalapp/GRKOpenSSLFramework`)
   - PureLayout
   - Reachability
@@ -120,6 +125,7 @@ DEPENDENCIES:
   - "SignalCoreKit (from `git@github.com:signalapp/SignalCoreKit`)"
   - "SignalCoreKit/Tests (from `git@github.com:signalapp/SignalCoreKit`)"
   - SignalRingRTC (from `ThirdParty/SignalRingRTC.podspec`)
+  - SkeletonView
   - SnapKit (~> 5.6.0)
   - SQLCipher (>= 4.0.1)
   - SSZipArchive (from `ThirdParty/SSZipArchive.podspec`)
@@ -143,9 +149,11 @@ SPEC REPOS:
     - libwebp
     - Logging
     - lottie-ios
+    - NVActivityIndicatorView
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SkeletonView
     - SnapKit
     - SQLCipher
     - SVGKit
@@ -258,6 +266,7 @@ SPEC CHECKSUMS:
   MobileCoin: effd134ddf721aab2e84d6ed0148486eab2cb9c8
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
   nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   OpenSSL-Universal: 84efb8a29841f2764ac5403e0c4119a28b713346
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -265,6 +274,7 @@ SPEC CHECKSUMS:
   SignalArgon2: 1c24183835ca861e6af06631c18b1671cdf35571
   SignalCoreKit: 9febad2d82f80c5b2f446740c68f1fba6d4cd9b2
   SignalRingRTC: 868ab2bb72d4d4be55466452c2a5c2545cafe25c
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLCipher: 712e8416685e8e575b9b0706ffee71678b2fdcf8
   SSZipArchive: 8c3485528a87fa6f90afdbfc33682eb61d985ae5
@@ -274,6 +284,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: ce3022741f30586e2765d92206e40fe5fed65165
+PODFILE CHECKSUM: ad30ce27262577c040524641e88acd051726b6c7
 
 COCOAPODS: 1.11.3
