@@ -22,9 +22,9 @@ PODS:
   - LibMobileCoin/CoreHTTP (4.0.0-pre3):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
-  - LibSignalClient (0.21.0):
+  - LibSignalClient (0.21.1):
     - SignalCoreKit
-  - LibSignalClient/Tests (0.21.0):
+  - LibSignalClient/Tests (0.21.1):
     - SignalCoreKit
   - libwebp (1.2.4):
     - libwebp/demux (= 1.2.4)
@@ -106,8 +106,8 @@ DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - LibMobileCoin/CoreHTTP (from `https://github.com/signalapp/libmobilecoin-ios-artifacts.git`, commit `4ee8fab85cc401c50478006246b1b288ecd55d5c`)
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
-  - LibSignalClient (from `https://github.com/signalapp/libsignal-client.git`)
-  - LibSignalClient/Tests (from `https://github.com/signalapp/libsignal-client.git`)
+  - "LibSignalClient (from `git@github.com:TISLLC/libsignal.git`, branch `v0.21.1_version`)"
+  - "LibSignalClient/Tests (from `git@github.com:TISLLC/libsignal.git`, branch `v0.21.1_version`)"
   - libwebp
   - lottie-ios
   - Mantle (from `https://github.com/signalapp/Mantle`, branch `signal-master`)
@@ -174,7 +174,8 @@ EXTERNAL SOURCES:
     :branch: signal-master
     :git: https://github.com/signalapp/libPhoneNumber-iOS
   LibSignalClient:
-    :git: https://github.com/signalapp/libsignal-client.git
+    :branch: v0.21.1_version
+    :git: "git@github.com:TISLLC/libsignal.git"
   Mantle:
     :branch: signal-master
     :git: https://github.com/signalapp/Mantle
@@ -218,8 +219,8 @@ CHECKOUT OPTIONS:
     :commit: 8b6f552682be0e66cf25cd0f0db5e1732a1e9f15
     :git: https://github.com/signalapp/libPhoneNumber-iOS
   LibSignalClient:
-    :commit: d94f1b3d70140302b452aa07309f2ed7a00ae493
-    :git: https://github.com/signalapp/libsignal-client.git
+    :commit: 0711ee5f1fd3fc47a9630a08099165bedb2cd5eb
+    :git: "git@github.com:TISLLC/libsignal.git"
   Mantle:
     :commit: e7e46253bb01ce39525d90aa69ed9e85e758bfc4
     :git: https://github.com/signalapp/Mantle
@@ -262,7 +263,7 @@ SPEC CHECKSUMS:
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   LibMobileCoin: af8d6580227c14b787370209f5ed4c4a4fc90b9f
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
-  LibSignalClient: d5fc5e3c791013339932a8574c8b5e81e04a5455
+  LibSignalClient: e85dcaa008cc02b9fe828d8d8aebc527565d1e7b
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
   lottie-ios: 016449b5d8be0c3dcbcfa0a9988469999cd04c5d
@@ -288,6 +289,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: eca5c2b5110c9690cc5cb86ecacf192561cb85a0
+PODFILE CHECKSUM: 2c6fc21240064601c83a00d93b08d4a5646ca902
 
 COCOAPODS: 1.11.3
