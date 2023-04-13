@@ -56,6 +56,7 @@ PODS:
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
   - OpenSSL-Universal (1.1.1900)
+  - pop (1.0.12)
   - PureLayout (3.1.4)
   - Reachability (3.2)
   - SAMKeychain (1.5.3)
@@ -117,6 +118,7 @@ DEPENDENCIES:
   - nekoton_uniffi (from `nekoton_uniffi/ios/nekoton_uniffi.podspec`)
   - NVActivityIndicatorView
   - OpenSSL-Universal (from `https://github.com/signalapp/GRKOpenSSLFramework`)
+  - pop
   - PureLayout
   - Reachability
   - SAMKeychain
@@ -150,6 +152,7 @@ SPEC REPOS:
     - Logging
     - lottie-ios
     - NVActivityIndicatorView
+    - pop
     - PureLayout
     - Reachability
     - SAMKeychain
@@ -273,6 +276,7 @@ SPEC CHECKSUMS:
   nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   OpenSSL-Universal: 84efb8a29841f2764ac5403e0c4119a28b713346
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
@@ -289,6 +293,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: 2c6fc21240064601c83a00d93b08d4a5646ca902
+PODFILE CHECKSUM: 0b960813f4ab2077ad0a88279444095294bf7b57
 
 COCOAPODS: 1.11.3
