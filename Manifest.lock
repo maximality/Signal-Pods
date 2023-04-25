@@ -18,7 +18,7 @@ PODS:
   - GRDB.swift/SQLCipher (5.26.0):
     - SQLCipher (>= 3.4.0)
   - IQKeyboardManager (6.5.10)
-  - Kingfisher (7.4.1)
+  - Kingfisher (7.6.2)
   - LibMobileCoin/CoreHTTP (4.0.0-pre3):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
@@ -250,7 +250,7 @@ SPEC CHECKSUMS:
   FittedSheets: c22df4c06036515f247951fa174912e8a65c8ce4
   GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
   IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
-  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   LibMobileCoin: af8d6580227c14b787370209f5ed4c4a4fc90b9f
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
   LibSignalClient: 41c080790acf2c4c4f4940deb5bc5bff40a4e5ba
