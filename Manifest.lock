@@ -229,7 +229,7 @@ DEPENDENCIES:
   - SignalArgon2/Tests (from `https://github.com/signalapp/Argon2.git`)
   - SignalCoreKit (from `https://github.com/signalapp/SignalCoreKit`)
   - SignalCoreKit/Tests (from `https://github.com/signalapp/SignalCoreKit`)
-  - SignalRingRTC (from `https://github.com/signalapp/ringrtc`, tag `v2.26.0`)
+  - SignalRingRTC (from `ringrtc`)
   - SkeletonView
   - SnapKit (~> 5.6.0)
   - SQLCipher (>= 4.0.1)
@@ -314,8 +314,7 @@ EXTERNAL SOURCES:
   SignalCoreKit:
     :git: https://github.com/signalapp/SignalCoreKit
   SignalRingRTC:
-    :git: https://github.com/signalapp/ringrtc
-    :tag: v2.26.0
+    :path: ringrtc
   SSZipArchive:
     :podspec: ThirdParty/SSZipArchive.podspec
   Starscream:
@@ -353,9 +352,6 @@ CHECKOUT OPTIONS:
   SignalCoreKit:
     :commit: c31350f2cab65be465b292752108fa876b81258f
     :git: https://github.com/signalapp/SignalCoreKit
-  SignalRingRTC:
-    :git: https://github.com/signalapp/ringrtc
-    :tag: v2.26.0
   Starscream:
     :commit: 71ebc08f248256497a237ece262e42e7ad05c4a5
     :git: https://github.com/signalapp/Starscream.git
@@ -418,6 +414,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: be7beddc92fe95cf80209af582384a41aac6441d
+PODFILE CHECKSUM: 41b8210fb35989b3a7a184d2727632f57c5b8046
 
 COCOAPODS: 1.12.1
