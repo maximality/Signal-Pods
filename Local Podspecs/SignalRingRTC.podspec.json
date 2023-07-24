@@ -36,6 +36,9 @@
   "dependencies": {
     "SignalCoreKit": [
 
+    ],
+    "SCNRecorder": [
+      "~> 2.7"
     ]
   },
   "pod_target_xcconfig": {

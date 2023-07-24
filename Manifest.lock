@@ -145,6 +145,7 @@ PODS:
     - CocoaLumberjack
     - Logging (~> 1.4)
     - SwiftProtobuf
+  - MTDMulticastDelegate (1.0.1)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -161,6 +162,8 @@ PODS:
   - PureLayout (3.1.4)
   - Reachability (3.2)
   - SAMKeychain (1.5.3)
+  - SCNRecorder (2.8.1):
+    - MTDMulticastDelegate
   - SignalArgon2 (1.3.2)
   - SignalArgon2/Tests (1.3.2)
   - SignalCoreKit (1.0.0):
@@ -168,9 +171,11 @@ PODS:
   - SignalCoreKit/Tests (1.0.0):
     - CocoaLumberjack
   - SignalRingRTC (2.26.0):
+    - SCNRecorder (~> 2.7)
     - SignalCoreKit
     - SignalRingRTC/WebRTC (= 2.26.0)
   - SignalRingRTC/WebRTC (2.26.0):
+    - SCNRecorder (~> 2.7)
     - SignalCoreKit
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
@@ -267,6 +272,7 @@ SPEC REPOS:
     - libwebp
     - Logging
     - lottie-ios
+    - MTDMulticastDelegate
     - nanopb
     - NVActivityIndicatorView
     - pop
@@ -275,6 +281,7 @@ SPEC REPOS:
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SCNRecorder
     - SkeletonView
     - SnapKit
     - SQLCipher
@@ -392,6 +399,7 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MobileCoin: eef7c6962bce0d82270171ee9aeac9da7b91b5d4
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
+  MTDMulticastDelegate: dcedff914c281710e3faa64b79ff775741f25b4b
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
@@ -401,9 +409,10 @@ SPEC CHECKSUMS:
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SCNRecorder: dd694ba1c5cd541a58f0794a45d70262109c7024
   SignalArgon2: 1c24183835ca861e6af06631c18b1671cdf35571
   SignalCoreKit: 3191731b893914ad63ae156899405621adaf9dfa
-  SignalRingRTC: 426c950638f4becf2810395cef5021d24201ab66
+  SignalRingRTC: 27bbf5926e11a60b2c2db1a7601292fb26d3b0da
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLCipher: f5b4857434158b571a3ed3b10b3b43cd18ef5f67
