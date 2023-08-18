@@ -114,7 +114,7 @@ PODS:
   - InputBarAccessoryView (5.5.0):
     - InputBarAccessoryView/Core (= 5.5.0)
   - InputBarAccessoryView/Core (5.5.0)
-  - IQKeyboardManager (6.5.10)
+  - IQKeyboardManager (6.5.12)
   - Kingfisher (7.6.2)
   - LibMobileCoin/CoreHTTP (4.0.0-pre3):
     - SwiftProtobuf (~> 1.5)
@@ -398,7 +398,7 @@ SPEC CHECKSUMS:
   GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
   GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
   InputBarAccessoryView: 1d7b0a672b36e370f01f264b3907ef39d03328e3
-  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   LibMobileCoin: af8d6580227c14b787370209f5ed4c4a4fc90b9f
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
