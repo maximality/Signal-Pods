@@ -1,9 +1,12 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - blurhash (0.0.1)
   - BonMot (6.0.0)
+  - BSImagePicker (3.3.1)
   - CocoaLumberjack (3.7.4):
     - CocoaLumberjack/Core (= 3.7.4)
   - CocoaLumberjack/Core (3.7.4)
+  - CryptoSwift (1.4.3)
   - Curve25519Kit (2.1.0):
     - CocoaLumberjack
     - LibSignalClient (>= 0.15.0)
@@ -12,14 +15,110 @@ PODS:
     - CocoaLumberjack
     - LibSignalClient (>= 0.15.0)
     - SignalCoreKit
+  - FirebaseAnalytics (10.12.0):
+    - FirebaseAnalytics/AdIdSupport (= 10.12.0)
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseAnalytics/AdIdSupport (10.12.0):
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleAppMeasurement (= 10.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseCore (10.12.0):
+    - FirebaseCoreInternal (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/Logger (~> 7.8)
+  - FirebaseCoreExtension (10.12.0):
+    - FirebaseCore (~> 10.0)
+  - FirebaseCoreInternal (10.12.0):
+    - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseCrashlytics (10.12.0):
+    - FirebaseCore (~> 10.5)
+    - FirebaseInstallations (~> 10.0)
+    - FirebaseSessions (~> 10.5)
+    - GoogleDataTransport (~> 9.2)
+    - GoogleUtilities/Environment (~> 7.8)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesObjC (~> 2.1)
+  - FirebaseDynamicLinks (10.12.0):
+    - FirebaseCore (~> 10.0)
+  - FirebaseInstallations (10.12.0):
+    - FirebaseCore (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/UserDefaults (~> 7.8)
+    - PromisesObjC (~> 2.1)
+  - FirebaseSessions (10.12.0):
+    - FirebaseCore (~> 10.5)
+    - FirebaseCoreExtension (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleDataTransport (~> 9.2)
+    - GoogleUtilities/Environment (~> 7.10)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesSwift (~> 2.1)
+  - FittedSheets (2.5.3)
+  - GoogleAppMeasurement (10.12.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (10.12.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.12.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleDataTransport (9.2.3):
+    - GoogleUtilities/Environment (~> 7.7)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.11.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.11.1):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.11.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.11.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (7.11.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.11.1)"
+  - GoogleUtilities/Reachability (7.11.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.11.1):
+    - GoogleUtilities/Logger
   - GRDB.swift/SQLCipher (5.26.0):
     - SQLCipher (>= 3.4.0)
+  - GzipSwift (5.1.1)
+  - IQKeyboardManager (6.5.12)
+  - Kingfisher (7.8.1)
   - LibMobileCoin/CoreHTTP (5.0.0):
     - SwiftProtobuf (~> 1.5)
   - libPhoneNumber-iOS (0.9.15)
-  - LibSignalClient (0.28.0):
+  - LibSignalClient (0.30.0):
     - SignalCoreKit
-  - LibSignalClient/Tests (0.28.0):
+  - LibSignalClient/Tests (0.30.0):
     - SignalCoreKit
   - libwebp (1.2.4):
     - libwebp/demux (= 1.2.4)
@@ -46,6 +145,19 @@ PODS:
     - CocoaLumberjack
     - Logging (~> 1.4)
     - SwiftProtobuf
+  - nanopb (2.30909.0):
+    - nanopb/decode (= 2.30909.0)
+    - nanopb/encode (= 2.30909.0)
+  - nanopb/decode (2.30909.0)
+  - nanopb/encode (2.30909.0)
+  - nekoton_uniffi (0.0.1)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - pop (1.0.12)
+  - PromisesObjC (2.2.0)
+  - PromisesSwift (2.2.0):
+    - PromisesObjC (= 2.2.0)
   - PureLayout (3.1.4)
   - Reachability (3.2)
   - SAMKeychain (1.5.3)
@@ -58,13 +170,18 @@ PODS:
     - SignalRingRTC/WebRTC (= 2.30.0)
   - SignalRingRTC/WebRTC (2.30.0):
     - SignalCoreKit
+  - SkeletonView (1.30.4)
+  - SnapKit (5.6.0)
   - SQLCipher (4.5.3):
     - SQLCipher/standard (= 4.5.3)
   - SQLCipher/common (4.5.3)
   - SQLCipher/standard (4.5.3):
     - SQLCipher/common
   - SSZipArchive (2.5.2)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
   - SwiftProtobuf (1.20.3)
+  - SwiftyJSON (4.3.0)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -73,46 +190,90 @@ PODS:
     - YYImage/Core
 
 DEPENDENCIES:
+  - ActiveLabel
   - blurhash (from `https://github.com/signalapp/blurhash`, branch `signal-master`)
   - BonMot
+  - BSImagePicker (~> 3.1)
   - CocoaLumberjack
+  - CryptoSwift (~> 1.4.1)
   - Curve25519Kit (from `https://github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)
   - Curve25519Kit/Tests (from `https://github.com/signalapp/Curve25519Kit`, branch `feature/SignalClient-adoption`)
+  - FirebaseAnalytics
+  - FirebaseCrashlytics
+  - FirebaseDynamicLinks
+  - FittedSheets
   - GRDB.swift/SQLCipher
+  - GzipSwift
+  - IQKeyboardManager
+  - Kingfisher (~> 7.0)
   - LibMobileCoin/CoreHTTP (from `https://github.com/signalapp/libmobilecoin-ios-artifacts`, commit `5cd4f39a24d06708d1c19aced8384740689d7f61`)
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
-  - LibSignalClient (from `https://github.com/signalapp/libsignal-client.git`, tag `v0.28.0`)
-  - LibSignalClient/Tests (from `https://github.com/signalapp/libsignal-client.git`, tag `v0.28.0`)
+  - LibSignalClient (from `libsignal-client`)
+  - LibSignalClient/Tests (from `libsignal-client`)
   - libwebp
   - lottie-ios
   - Mantle (from `https://github.com/signalapp/Mantle`, branch `signal-master`)
   - MobileCoin/CoreHTTP (from `https://github.com/mobilecoinofficial/MobileCoin-Swift`, tag `v5.0.0`)
   - MobileCoinMinimal (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
   - MobileCoinMinimal/Tests (from `https://github.com/signalapp/MobileCoin-Swift.git`, branch `charlesmchen/mobileCoinMinimal`)
+  - nekoton_uniffi (from `nekoton_uniffi/ios/nekoton_uniffi.podspec`)
+  - NVActivityIndicatorView
+  - pop
   - PureLayout
   - Reachability
   - SAMKeychain
   - SignalCoreKit (from `https://github.com/signalapp/SignalCoreKit`)
   - SignalCoreKit/Tests (from `https://github.com/signalapp/SignalCoreKit`)
   - SignalRingRTC (from `https://github.com/signalapp/ringrtc`, tag `v2.30.0`)
+  - SkeletonView
+  - SnapKit (~> 5.6.0)
   - SQLCipher (from `https://github.com/signalapp/sqlcipher.git`, commit `8ea0af7934e0107e4de8e96c8a7d5a95e2611eef`)
   - SSZipArchive (from `ThirdParty/SSZipArchive.podspec`)
+  - SVGKit
   - SwiftProtobuf (>= 1.14.0)
+  - SwiftyJSON (~> 4.0)
   - YYImage (from `https://github.com/signalapp/YYImage`)
   - YYImage/libwebp (from `https://github.com/signalapp/YYImage`)
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - BonMot
+    - BSImagePicker
     - CocoaLumberjack
+    - CryptoSwift
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreExtension
+    - FirebaseCoreInternal
+    - FirebaseCrashlytics
+    - FirebaseDynamicLinks
+    - FirebaseInstallations
+    - FirebaseSessions
+    - FittedSheets
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
     - GRDB.swift
+    - GzipSwift
+    - IQKeyboardManager
+    - Kingfisher
     - libwebp
     - Logging
     - lottie-ios
+    - nanopb
+    - NVActivityIndicatorView
+    - pop
+    - PromisesObjC
+    - PromisesSwift
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SkeletonView
+    - SnapKit
+    - SVGKit
     - SwiftProtobuf
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   blurhash:
@@ -128,8 +289,7 @@ EXTERNAL SOURCES:
     :branch: signal-master
     :git: https://github.com/signalapp/libPhoneNumber-iOS
   LibSignalClient:
-    :git: https://github.com/signalapp/libsignal-client.git
-    :tag: v0.28.0
+    :path: libsignal-client
   Mantle:
     :branch: signal-master
     :git: https://github.com/signalapp/Mantle
@@ -139,6 +299,8 @@ EXTERNAL SOURCES:
   MobileCoinMinimal:
     :branch: charlesmchen/mobileCoinMinimal
     :git: https://github.com/signalapp/MobileCoin-Swift.git
+  nekoton_uniffi:
+    :path: nekoton_uniffi/ios/nekoton_uniffi.podspec
   SignalCoreKit:
     :git: https://github.com/signalapp/SignalCoreKit
   SignalRingRTC:
@@ -165,9 +327,6 @@ CHECKOUT OPTIONS:
   libPhoneNumber-iOS:
     :commit: 8b6f552682be0e66cf25cd0f0db5e1732a1e9f15
     :git: https://github.com/signalapp/libPhoneNumber-iOS
-  LibSignalClient:
-    :git: https://github.com/signalapp/libsignal-client.git
-    :tag: v0.28.0
   Mantle:
     :commit: e7e46253bb01ce39525d90aa69ed9e85e758bfc4
     :git: https://github.com/signalapp/Mantle
@@ -191,30 +350,58 @@ CHECKOUT OPTIONS:
     :git: https://github.com/signalapp/YYImage
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   blurhash: 4b3b2b8909cf41ab59fa349788654b8387284ff4
   BonMot: fb2b6a2209cb3149aca37b7131d49c051c04ae86
+  BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
   CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
   Curve25519Kit: 003b546a89ceb374a64c7771b40f8362d63b91bd
+  FirebaseAnalytics: 0270389efbe3022b54ec4588862dabec3477ee98
+  FirebaseCore: f86a1394906b97ac445ae49c92552a9425831bed
+  FirebaseCoreExtension: 0ce5ac36042001cfa233ce7bfa28e5c313cf80f4
+  FirebaseCoreInternal: 950500ad8a08963657f6d8c67b579740c06d6aa1
+  FirebaseCrashlytics: c4d111b7430c49744c74bcc6346ea00868661ac8
+  FirebaseDynamicLinks: 1a387da899779e5ef34f4d6f8bdba882f90d0e67
+  FirebaseInstallations: 7b99ef103f013624444c614397038219c45f8e63
+  FirebaseSessions: a4ee211eeb31a2224cd8d9d4e30a0fccde9aa00c
+  FittedSheets: c22df4c06036515f247951fa174912e8a65c8ce4
+  GoogleAppMeasurement: 2d800fab85e7848b1e66a6f8ce5bca06c5aad892
+  GoogleDataTransport: f0308f5905a745f94fb91fea9c6cbaf3831cb1bd
+  GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
   GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
+  GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
+  IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
+  Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
   LibMobileCoin: b1a473933091536cb87fc92a7ca35c63855451f3
   libPhoneNumber-iOS: 2d26d0a38933eee2702962a4dbdec2fc20e5ef9f
-  LibSignalClient: 754e6f6d8ea478179a6a0b4e1f2de57b275b7de3
+  LibSignalClient: e7fee788b347752adf32000971214c58f544c25a
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
   lottie-ios: 016449b5d8be0c3dcbcfa0a9988469999cd04c5d
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MobileCoin: ebf8372645558eb8fdb865b2888f63ad8ee9d81c
   MobileCoinMinimal: 627ed590d8a0d5d57c39ec25727bde3d976d2f7a
+  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  nekoton_uniffi: 0e7eec9fb7c8bcd9554b8dbc833a93704bd9dcdc
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  PromisesSwift: cf9eb58666a43bbe007302226e510b16c1e10959
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SignalCoreKit: da9aed6ee558e66fe9380f6745880ae58e610912
   SignalRingRTC: 61a4222c57037c92679f848a9131898c0a9ad8a3
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLCipher: 57fa9f863fa4a3ed9dd3c90ace52315db8c0fdca
   SSZipArchive: 8c3485528a87fa6f90afdbfc33682eb61d985ae5
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYImage: f1ddd15ac032a58b78bbed1e012b50302d318331
 
-PODFILE CHECKSUM: b51ac5fd84bcaf7ca11361fba6048b58aaed24b7
+PODFILE CHECKSUM: 80ff6e3afb170e3ff4bea424ab43ef65a1d64e2c
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
