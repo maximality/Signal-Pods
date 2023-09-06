@@ -38,7 +38,7 @@ public func owsFailDebug(_ logMessage: String,
     Logger.flush()
     let formattedMessage = owsFormatLogMessage(logMessage, file: file, function: function, line: line)
     if IsDebuggerAttached() {
-        TrapDebugger()
+        //TrapDebugger()
     } else {
         assertionFailure(formattedMessage)
     }
