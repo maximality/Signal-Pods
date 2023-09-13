@@ -97,7 +97,20 @@ extension rtc_Bytes {
     }
 
     func toUUID() -> UUID? {
-        return self.toData()?.uuid
+        guard let ptr = UnsafeRawPointer(self.ptr),
+              self.count >= MemoryLayout<uuid_t>.size else {
+            return nil
+        }
+        return UUID(uuid: ptr.loadUnaligned(as: uuid_t.self))
+    }
+}
+
+extension ContiguousBytes {
+    func withRtcBytes<R>(_ body: (rtc_Bytes) throws -> R) rethrows -> R {
+        return try withUnsafeBytes { buffer in
+            let bytes = rtc_Bytes(ptr: buffer.baseAddress?.assumingMemoryBound(to: UInt8.self), count: buffer.count)
+            return try body(bytes)
+        }
     }
 }
 
