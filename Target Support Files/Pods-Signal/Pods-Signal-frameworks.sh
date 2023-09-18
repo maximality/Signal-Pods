@@ -142,13 +142,8 @@ strip_invalid_archs() {
   for arch in $binary_archs; do
     if ! [[ "${ARCHS}" == *"$arch"* ]]; then
       # Strip non-valid architectures in-place
-      realBinary="${binary}"
-      if [ -L "${realBinary}" ]; then
-        echo "Symlinked..."
-        dirname="$(dirname "${realBinary}")"
-        realBinary="${dirname}/$(readlink "${realBinary}")"
-      fi
-      lipo -remove "${arch}" -output "${realBinary}" "${realBinary}" || exit 1      stripped="$stripped $arch"
+      lipo -remove "$arch" -output "$binary" "$binary"
+      stripped="$stripped $arch"
     fi
   done
   if [[ "$stripped" ]]; then
