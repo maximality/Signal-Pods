@@ -177,15 +177,15 @@ PODS:
     - SignalCoreKit
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
-  - Socket.IO-Client-Swift (16.0.1):
-    - Starscream (~> 4.0)
+  - Socket.IO-Client-Swift (16.1.0):
+    - Starscream (~> 4.0.6)
   - SQLCipher (4.5.3):
     - SQLCipher/standard (= 4.5.3)
   - SQLCipher/common (4.5.3)
   - SQLCipher/standard (4.5.3):
     - SQLCipher/common
   - SSZipArchive (2.5.2)
-  - Starscream (4.0.4)
+  - Starscream (4.0.6)
   - SVGKit (3.0.0):
     - CocoaLumberjack (~> 3.0)
   - SwiftProtobuf (1.20.3)
@@ -411,10 +411,10 @@ SPEC CHECKSUMS:
   SignalRingRTC: 61a4222c57037c92679f848a9131898c0a9ad8a3
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Socket.IO-Client-Swift: ee4b8f80a3db18dd7f32b266ddf273310609443c
   SQLCipher: 57fa9f863fa4a3ed9dd3c90ace52315db8c0fdca
   SSZipArchive: 8c3485528a87fa6f90afdbfc33682eb61d985ae5
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
